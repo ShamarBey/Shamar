@@ -1,0 +1,57 @@
+#include <iostream> 
+#include <fstream> 
+#include <String> 
+
+using namespace std;
+
+int main()
+{
+
+    ifstream inputFile("C:/Users/rizae/source/repos/lab_work14-1/input.txt");
+    ofstream outputFile("C:/Users/rizae/source/repos/lab_work14-1/output.txt");
+
+    string content_input_file;
+    char symvols[] =
+    {
+        '!',
+        '#',
+        '%',
+        '&',
+        '(',
+        ')',
+        '*',
+        ',',
+        '.',
+        '/',
+        ':',
+        ';',
+        '?',
+        '[',
+        '\\',
+        ']',
+        '^',
+        '_',
+        '{',
+        '|',
+        '}',
+        '~',
+    };
+
+    while (inputFile >> content_input_file)
+    {
+        for (char symvol_in_file : content_input_file)
+        {
+            for (char symvol : symvols)
+            {
+                if (symvol_in_file == symvol)
+                {
+                    outputFile << symvol_in_file << ' ';
+                }
+            }
+        }
+    }
+
+    outputFile.close();
+    inputFile.close();
+    return 0;
+}

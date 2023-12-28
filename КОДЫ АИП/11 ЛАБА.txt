@@ -1,0 +1,141 @@
+#include <iostream> 
+#include<locale.h>
+#include<Windows.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    double x, result = 0;
+    int n;
+
+    cout << "Введите X: ";
+    cin >> x;
+    cout << "Введите N (> 0): ";
+    cin >> n;
+
+    for (int i = 0; i <= n; i++) 
+    {
+        int factorial = 1;
+        for (int j = 1; j <= 2 * i; j++) 
+        {
+            factorial *= j;
+        }
+
+        result = result + pow(-1, i) * pow(x, 2 * i) / factorial;
+    }
+
+    cout << "Приближенное значение cos(" << x << ") для N = " << n << ": " << result << endl;
+
+    return 0;
+}
+
+
+
+
+#include<iostream>
+#include<locale.h>
+#include<Windows.h>
+
+
+using namespace std;
+
+
+int square(int dimension, int size)
+{
+    int count = 0;
+    while (dimension >= size) 
+    {
+        dimension -= size;
+        ++count;
+    }
+    return count;
+}
+
+
+int multiply(int a, int b) 
+{
+    int result = 0;
+    for (int i = 0; i < b; ++i) 
+    {
+        result += a;
+    }
+    return result;
+}
+
+int main() 
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int A, B, C;
+
+    cout << "Введите A (ширину прямоугольника): ";
+    cin >> A;
+    cout << "Введите B (высоту прямоугольника): ";
+    cin >> B;
+    cout << "Введите C (сторону квадрата): ";
+    cin >> C;
+
+
+    int squaresHorizontally = square(A, C);
+    int squaresVertically = square(B, C);
+
+
+    int totalSquares = multiply(squaresHorizontally, squaresVertically);//общее количество квадратов =   (квадраты по горизонтали, квадраты по вертикали)
+
+    cout << "Количество квадратов: " << totalSquares << endl;
+
+    return 0;
+}
+
+
+
+#include<iostream>
+#include<locale.h>
+#include<Windows.h>
+#include <vector>
+using namespace std;
+
+int sumOfDivisors(int n) // сумма Делителей
+{
+    int sum = 1;
+    for (int i = 2; i * i <= n; ++i)
+    {
+        if (n % i == 0)
+        {
+            sum += i;
+            if (i != n / i)
+            {
+                sum += n / i;
+            }
+        }
+    }
+    return sum;
+}
+
+int main() {
+    const int limit = 50000;
+    vector<int> pairs;
+
+    for (int num1 = 2; num1 < limit; ++num1) 
+    {
+        int num2 = sumOfDivisors(num1);
+        if (num1 < num2 && num2 < limit && sumOfDivisors(num2) == num1) 
+        {
+            pairs.push_back(num1);
+            pairs.push_back(num2);
+        }
+    }
+
+
+    for (int i = 0; i < pairs.size(); i += 2) 
+    {
+        cout << "Дружественная пара: (" << pairs[i] << ", " << pairs[i + 1] << ")\n";
+    }
+
+    return 0;
+}

@@ -1,0 +1,77 @@
+А 
+
+#include <iostream>
+#include<locale.h>
+#include<cmath>
+using namespace std;
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    double a, b, c, d, x1, x2; //Объявляем переменные
+    cout << "Коеффициент A: ";
+    cin >> a;
+    cout << "Коеффициент B: ";
+    cin >> b;
+    cout << "Коеффициент C: ";
+    cin >> c;
+    d = b * b - 4 * a * c; //Уравнение дискриминанта
+    if (d > 0) //Условие при дискриминанте больше нуля
+    {
+        x1 = ((-b) + sqrt(d)) / (2 * a);
+        x2 = ((-b) - sqrt(d)) / (2 * a);
+        cout << "Корни квадратного уравнения: " << x1 << " и " << x2;
+    }
+    if (d == 0) //Условие для дискриминанта равного нулю
+    {
+        x1 = -(b / (2 * a));
+        cout << "Корни равны x1=x2=" << x1 << "\n";
+    }
+    if (d < 0) //Условие при дискриминанте меньше нуля
+        cout << "Дискриминант < 0, Действительных корней не существует";
+
+} 
+
+
+
+Б
+
+#include <iostream>
+#include <cmath>
+#include<locale.h>
+using namespace std;
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    double a, b, c;
+
+    cout << "Введите длины сторон треугольника:\n";
+    cout << "a: "; std::cin >> a;
+    cout << "b: "; std::cin >> b;
+    cout << "c: "; std::cin >> c;
+
+    double p = (a + b + c) / 2;
+    double S = sqrt(p * (p - a) * (p - b) * (p - c));
+
+    double ha = 2 * S / a;
+    double hb = 2 * S / b;
+    double hc = 2 * S / c;
+
+    double ma = 0.5 * sqrt(2 * b * b + 2 * c * c - a * a);
+    double mb = 0.5 * sqrt(2 * a * a + 2 * c * c - b * b);
+    double mc = 0.5 * sqrt(2 * a * a + 2 * b * b - c * c);
+
+    double la = (2 * b * c / (b + c)) * sqrt(p * (p - a));
+    double lb = (2 * a * c / (a + c)) * sqrt(p * (p - b));
+    double lc = (2 * a * b / (a + b)) * sqrt(p * (p - c));
+
+    double r = S / p;
+    double R = (a * b * c) / (4 * S);
+
+    cout << "Длины высот: ha=" << ha << ", hb=" << hb << ", hc=" << hc << "\n";
+    cout << "Длины медиан: ma=" << ma << ", mb=" << mb << ", mc=" << mc << "\n";
+    cout << "Длины биссектрис: la=" << la << ", lb=" << lb << ", lc=" << lc << "\n";
+    cout << "Радиус вписанной окружности: r=" << r << "\n";
+    cout << "Радиус описанной окружности: R=" << R << "\n";
+    return 0;
+    cin.get();
+}

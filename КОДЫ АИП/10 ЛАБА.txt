@@ -1,0 +1,149 @@
+/*#include<iostream>
+using namespace std;
+
+int main()
+{
+    char ch;
+    cout << "type characters and press Enter: ";
+    cin >> ch;
+
+    int code = (int)ch;
+
+    cout << "ASCII-code is: " << code << endl;
+    cout << "the previous character is: " << char(code - 1) << endl;
+    cout << "the next character is: " << char(code + 1) << endl;
+    cout << "press Enter to exit";
+
+    cin.get();
+    cin.get();
+
+    return 0;
+}*/
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+float floatValue;
+
+cout << "Enter a number:" ;
+cin >> floatValue;
+
+int intValue = static_cast<int>(floatValue);
+cout << "Static cast result: " << intValue << endl;
+
+return 0;
+}
+
+ 
+#include <iostream>
+using namespace std;
+int main()
+{
+bool isTrue ; // Число преобразуется в true
+cout << "Enter a number: ";
+cin >> isTrue;
+if (isTrue)
+
+{
+cout << "The number is true in boolean context." << endl;
+}
+
+else
+
+{
+cout << "The number is false in boolean context." << endl;
+}
+return 0;
+}
+
+/*#include <iostream>
+using namespace std;
+int main()
+{
+	
+	int negativeValue;
+	cout << "Enter a number: ";
+	cin >> negativeValue;
+	
+	unsigned int unsignedValue = static_cast<unsigned int>(negativeValue);
+	
+	cout << "Negative value: " << negativeValue << endl;
+	cout << "Unsigned value after conversion: " << unsignedValue << endl;
+	return 0;
+}*/
+
+
+/*#include <iostream>
+using namespace std;
+
+int main()
+{
+    short shortValue ;
+    bool boolValue ;
+
+    cout << "Enter a short value: ";
+    cin >> shortValue;
+
+    cout << "Enter a bool value (0 or 1): ";
+    cin >> boolValue;
+
+    // Неявное преобразование short в bool не произойдет.
+    // Ниже приведен пример явного преобразования.
+    boolValue = bool(shortValue);
+
+    // Арифметическая операция между short и bool.
+    // Неявное преобразование short в bool не произойдет.
+    // Ниже приведен пример явного преобразования.
+    short result = shortValue + short(boolValue);
+
+    cout << "Short value: " << shortValue << endl;
+    cout << "Bool value: " << boolValue << endl;
+    cout << "Result of the operation: " << result << endl;
+
+    return 0;
+}*/
+
+
+
+/*#include <iostream>
+#include <string>
+#include<locale.h>
+#include<Windows.h>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    // Запрос ввода строки с числовым значением
+    cout << "Введите строку с числовым значением: ";
+    string input; cin >> input;
+
+    // Попытка преобразования строки в целое число
+    int convertedValue = 0;
+
+    // Проверка успешности преобразования
+    size_t pos = 0;
+    convertedValue = stoi(input, &pos);
+
+    if (pos == input.length())
+    {
+        // Вывод результата, если преобразование прошло успешно
+        cout << "Преобразованное целое число: " << convertedValue << endl;
+    }
+    else
+    {
+        // Вывод сообщения об ошибке, если преобразование не удалось
+        cerr << "Ошибка: введенная строка не является числовым значением." << endl;
+    }
+
+    return 0;
+}*/
+
+
+
+

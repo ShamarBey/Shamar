@@ -1,0 +1,133 @@
+1 Задание
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+int x = 65530;
+
+int y = 10;
+
+x = x+y;
+
+cout << "65530+10=" << x;
+
+return 0;
+
+}
+
+2 Задание
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int a = sizeof(char);
+	int b = sizeof(short);
+	int c = sizeof(int);
+	int d = sizeof(float);
+	int e = sizeof(double);
+	cout <<"sizeof char= " << a << "\t" <<"sizeof short= " << b << "\t" <<"sizeof int=" << c << "\t" <<"sizeof float=" << d << "\t" <<"sizeof double= " << e;
+
+	return 0;
+}
+
+3 Задание
+
+#include <iostream>
+#include <locale.h> 
+#include <Windows.h> 
+
+using namespace std;
+
+int main()
+
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	char name[12];
+	char fam[20];
+	int age;
+	int kg;
+	cout << "введите имя и фамилию:";
+
+	cin >> name >> fam;
+
+	cout << "введите ваш возраст:";
+
+	cin >> age;
+
+	cout << "введите ваш вес:";
+
+	cin >> kg;
+
+	cout << "Hello, My name is " << name << " " << fam << "!\n" << "I am " << age << " years old.\n" << "I weigh " << kg << " kg.";
+
+}
+
+4 Задание
+
+#include<iostream>
+#include <locale.h> 
+#include <Windows.h> 
+
+using namespace std;
+
+int main()
+
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+
+	
+
+	int a, b;
+
+	cout << "Введите колличество карандашей:";
+
+	cin >> a;
+
+	cout << "Введите стоимость карандаша:";
+
+	cin >> b;
+
+
+
+	int c, d;
+
+	cout << "Введите колличество тетрадей:";
+
+	cin >> c;
+
+	cout << "Введите стоимость тетради:";
+
+	cin >> d;
+
+
+
+	int e, f;
+
+	cout << "Введите колличество ручек:";
+
+	cin >> e;
+
+	cout << "Введите стоимость ручки:";
+
+	cin >> f;
+
+	int form = (a * b) + (b * c) + (e * f);
+
+	cout << "Сумма покупки:" << form << endl;
+
+	return 0;
+
+}

@@ -1,0 +1,90 @@
+#include <iostream>
+#include<locale.h>
+using namespace std;
+int Function()
+{
+    setlocale(LC_ALL, "Russian");
+        int number;
+        cout << "Введите трехзначное число: ";
+        cin >> number;
+
+   
+        if (number >= 100 && number <= 999) {
+            int originalNumber = number;
+            int reverseNumber = 0;
+            while (number != 0) {
+                int digit = number % 10;
+                reverseNumber = reverseNumber * 10 + digit;
+                number /= 10;
+            }
+
+            // Проверяем, является ли число палиндромом
+            if (originalNumber == reverseNumber) {
+                cout << "Число " << originalNumber << " палиндром.";
+            }
+            else {
+                cout << "Число " <<originalNumber<< " не палиндром.";
+            }
+        }
+        else {
+            cout << "Введите трехзначное число.";
+        }
+
+        return 0;
+}
+int Function2()
+{
+    
+    setlocale(LC_ALL, "Russian");
+    float a;
+    float b;
+    float c;
+    float d;
+    cout << "\nВведите длину конверта: ";
+    cin >> a;
+    cout << "Введите высоту конверта: ";
+    cin >> b;
+    cout << "Введите длину открытки: ";
+    cin >> c;
+    cout << "Введите высоту открытки: ";
+    cin >> d;
+    if (a > c && a - c >= 1 && b > d && b - d >= 1) {
+        cout << "Открытка вместиться в конверт";
+    }
+    else {
+        cout << "Открытка не вместиться в конверт";
+    }
+    return 0;
+
+
+}
+int Function3() {
+    float a;
+    float b;
+    int c;
+    float d;
+    cout << "\nВведите номер действия 1.+ 2.- 3.* 4./: ";
+    cin >> c;
+    cout << "Введите число А: ";
+    cin >> a;
+    cout << "Введите число B: ";
+    cin >> b;
+    if (c == 1) {
+        d = a + b;
+        cout << a << "+" << b << "=" << d;
+
+    }
+    if (c == 2) {
+        d = a - b;
+        cout << a << "-" << b << "=" << d;
+    }
+    if (c == 3) {
+        d = a * b;
+        cout << a << "*" << b << "=" << d;
+    }
+    if (c == 4) {
+        d = a / b;
+        cout << a << "/" << b << "=" << d;
+    }
+    return 0;
+}

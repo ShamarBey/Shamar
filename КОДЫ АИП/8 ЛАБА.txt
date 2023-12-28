@@ -1,0 +1,145 @@
+/*#include<iostream>
+#include<locale.h>
+#include<Windows.h>
+using namespace std;
+
+int main() 
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	char st[6];
+	char ch;
+
+	cout << "type characters and press Enter: ";
+	cin >> st;
+
+	ch = st[0];
+	st[0] = st[4];
+	st[4] = ch;
+
+	cout << "the result is: " << st;
+
+	cin.get();
+	cin.get();
+}*/
+
+/*#include <iostream>
+#include <string>
+#include<Windows.h>
+#include<locale.h>
+using namespace std;
+
+int main() 
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251); 
+	SetConsoleOutputCP(1251);
+	string str;
+	cout << "Введите строку: ";
+	getline(cin, str);
+	for (int i = 0; i < str.length(); i++)
+	{
+		str[i] = ' ';
+	}
+
+	cout << "Результат: " << str << endl;
+	cin.get();
+	cin.get();
+	return 0;
+}*/
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+	setlocale(LC_ALL, "Russian");
+	char first, second;
+	cout << "Введите два символа: ";
+	cin >> first >> second;
+
+	if (first > second) 
+	{
+		swap(first, second);
+	}
+
+	cout << "Символы между " << first << " и " << second << " в алфавитном порядке: ";
+	for (char c = first + 1; c < second; ++c) 
+	{
+		cout << c << " ";
+	}
+	cout << endl;
+
+	return 0;
+}
+
+
+#include<iostream> 
+using namespace std; 
+
+int main() 
+{ 
+    char st[6]; 
+    char ch; 
+
+    cout << "Type characters and press Enter: "; 
+    cin >> st; 
+
+    ch = st[0]; 
+    st[0] = st[4]; 
+    st[4] = ch; 
+
+    cout << "The result is: " << st; 
+
+    cin.get(); 
+    cin.get(); 
+}
+
+
+
+
+
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string inputString;
+    std::cout << "Введите строку: ";
+    std::getline(std::cin, inputString);
+    for (char & ch : inputString) {
+        ch = ' ';
+    }
+    std::cout << "Результат: " << inputString << std::endl;
+
+    return 0;
+}
+
+
+
+
+Эта часть кода используется для вывода содержимого массива st после обмена местами первого и последнего символов. Содержимое массива st выводится после строки "The result is: ".
+
+Объект строки (std::string) предоставляет удобный способ работы со строками в C++. Он автоматически управляет памятью и предоставляет различные методы для работы с символами, подстроками и другими операциями со строками.
+
+Таким образом, std::string inputString; объявляет переменную inputString, которая может хранить строку символов, и изначально она будет пустой (без символов). Позже в программе эта переменная будет использована для хранения введенной пользователем строки.
+
+
+программа просит пользователя ввести строку, выводя сообщение "Введите строку: ".
+
+
+Здесь используется функция std::getline, которая считывает строку из стандартного ввода (std::cin) и сохраняет её в переменную inputString. Функция std::getline позволяет считывать строку с учетом пробелов, в отличие от оператора >>, который считывает только одно слово
+
+
+std::endl представляет собой манипулятор, который добавляет символ новой строки и приводит к сбросу буфера вывода. Это альтернатива использованию символа новой строки ('\n'). В данном контексте он используется для завершения строки вывода и перехода на новую строку.
+
+Таким образом, вся строка выводит на экран текст "Результат: " с последующим выводом измененной строки inputString.После первого вызова cin.get() идет второй вызов cin.get(), который также считывает один символ. Это делается для того, чтобы обработать возможное воздействие пользователя после нажатия Enter.
+
+Таким образом, эти строки создают задержку перед закрытием программы, предоставляя пользователю время прочитать результат на экране до того, как программа завершится.
+
+
+
+
+
+
+

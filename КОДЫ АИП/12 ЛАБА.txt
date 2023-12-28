@@ -1,0 +1,94 @@
+#include <iostream>
+#include <string>
+#include <locale.h>
+#include <Windows.h>
+using namespace std;
+
+int findLast(string sentence, char target)
+{
+    int last = -1;
+    for (int i = 0; i < sentence.length(); ++i)
+    {
+        if (sentence[i] == target)
+        {
+            last = i;
+        }
+    }
+    return last;
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    string sentence1, sentence2;
+    char targetLetter = 'm';
+
+    cout << "Введите первое предложение: ";
+    getline(cin, sentence1);
+
+    cout << "Введите второе предложение: ";
+    getline(cin, sentence2);
+
+    int lastSentence1 = findLast(sentence1, targetLetter);
+    int lastSentence2 = findLast(sentence2, targetLetter);
+
+    if (lastSentence1 > lastSentence2)
+    {
+        cout << "Буква 'm' имеет больший порядковый номер в первом предложении.\n";
+    }
+    else if (lastSentence1 < lastSentence2)
+    {
+        cout << "Буква 'm' имеет больший порядковый номер во втором предложении.\n";
+    }
+    else
+    {
+        cout << "Буква 'm' имеет одинаковый порядковый номер в обоих предложениях.\n";
+    }
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+#include <locale.h>
+#include <Windows.h>
+using namespace std;
+
+
+void Mean(double X, double Y, double& AMean, double& GMean) 
+{
+   
+    AMean = (X + Y) / 2;
+
+    GMean = sqrt(X * Y);
+}
+
+int main()
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    double A, B, C, D;
+    cout << "Введите значения A, B, C, D: ";
+    cin >> A >> B >> C >> D;
+
+    double AMean_AB, GMean_AB;
+    Mean(A, B, AMean_AB, GMean_AB);
+    cout << "Среднее арифметическое для (A, B): " << AMean_AB << endl;
+    cout << "Среднее геометрическое для (A, B): " << GMean_AB << endl;
+
+    double AMean_AC, GMean_AC;
+    Mean(A, C, AMean_AC, GMean_AC);
+    cout << "Среднее арифметическое для (A, C): " << AMean_AC << endl;
+    cout << "Среднее геометрическое для (A, C): " << GMean_AC << endl;
+
+    double AMean_AD, GMean_AD;
+    Mean(A, D, AMean_AD, GMean_AD);
+    cout << "Среднее арифметическое для (A, D): " << AMean_AD << endl;
+    cout << "Среднее геометрическое для (A, D): " << GMean_AD << endl;
+    return 0;
+}

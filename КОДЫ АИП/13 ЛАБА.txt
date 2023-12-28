@@ -1,0 +1,106 @@
+#include <iostream>
+#include<locale.h>
+#include<Windows.h>
+using namespace std;
+
+
+
+// Рекурсивная функция K
+int K(int n) 
+{
+    if (n == 0) 
+    {
+        return 0;
+    }
+    else 
+    {
+        if (n % 5 > 1) 
+        {
+            return n % 5;
+        }
+        else 
+        {
+            return K(n / 5);
+        }
+    }
+}
+
+// Функция W
+int W(int p, int q) 
+{
+    
+    int result = 0;
+    for (int i = p; i <= q; ++i) 
+    {
+        result += K(i);
+    }
+    return result;
+}
+
+int main() 
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int p, q;
+
+    // Ввод значений p и q и вычисление W(p, q)
+    cout << "Введите значения p и q: ";
+    cin >> p >> q;
+    cout << "W(" << p << ", " << q << ") = " << W(p, q) << endl;
+
+    return 0;
+}
+
+
+
+
+#include <iostream>
+#include <locale.h>
+#include <Windows.h>
+using namespace std;
+
+int sumOf(int num) 
+{
+    if (num == 0) 
+    {
+        return 0;
+    }
+    else 
+    {
+        return (num % 10) * (num % 10) + sumOf(num / 10);
+    }
+}
+
+int recursiveSum(int n) 
+{
+    if (n == 0) 
+    {
+        return 0;
+    }
+    else 
+    {
+        return sumOf(n) + recursiveSum(n - 1);
+    }
+}
+
+int main() 
+{
+    setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int n;
+
+    cout << "Введите натуральное число n: ";
+    cin >> n;
+
+    if (n < 1) 
+    {
+        cout << "Натуральное число должно быть больше 0." << endl;
+        return 1;
+    }
+
+    cout << "Сумма m(1) + m(2) + ... + m(" << n << ") равна: " << recursiveSum(n) << endl;
+
+    return 0;
+}

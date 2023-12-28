@@ -1,0 +1,91 @@
+/*#include<iostream>
+#include<locale.h>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	bool A, B, C, r1, r2, r3, r4;
+
+	// Ввод значений переменных A, B, C
+	cout << "Введите значения переменных A, B, C (0 - false, 1 - true): " << endl;
+	cout << "A = ";
+	cin >> A;
+	cout << "B = ";
+	cin >> B;
+	cout << "C = ";
+	cin >> C;
+
+
+	// Вычисление значений логических выражений
+	r1 = A || !C;
+	r2 = !A && !B;
+	r3 = !(A && C) || B;
+	r4 = A && !B || !C;
+
+	// Вывод результатов`
+	cout << "\n Результаты:" << endl;
+	cout << "r1 = " << r1 << endl;
+	cout << "r2 = " << r2 << endl;
+	cout << "r3 = " << r3 << endl;
+	cout << "r4 = " << r4 << endl;
+
+	return 0;
+}*/
+
+
+
+
+/*#include<iostream>
+#include<locale.h>
+using namespace std;
+
+int main()
+{
+	int x, y;
+
+	cout << "x = ";
+	cin >> x;
+
+	cout << "y = ";
+	cin >> y;
+
+	bool r1 = 0 < y <= 4 and x < 5;
+	bool r2 = x <= 0 and y > 5;
+
+	cout << "r1 =  0 < y <= 4 and x < 5 = " << r1 << endl;
+	cout << "r2 = x <= 0 and y > 5 = " << r2;
+
+	return 0;
+}*/
+
+
+#include<iostream>
+#include<locale.h>
+using namespace std;
+
+int main()
+{
+
+	int number;
+	setlocale(LC_ALL, "Russian");
+	cout << "\n B трехзначное число: ";
+
+	cin >> number;
+
+	int first = number / 100;
+	int second = (number / 10) % 10;
+	int third = number % 10;
+	if ((first < second && second < third) ||
+		(first > second && second > third))
+	{
+		
+		cout << "The above statement is true";
+	}
+	else {
+		
+		cout << "The above statement is false";
+	}
+	return 0;
+}
+	
